@@ -62,7 +62,11 @@ Park.prototype.countAnnualVisitors = function() {
 };
 
 
-
+Park.prototype.calculateAnnualRevenue = function() {
+    annualVisitors = this.countAnnualVisitors();
+    annualRevenue = annualVisitors * this.ticketPrice;
+    return annualRevenue;
+};
 
 
 
