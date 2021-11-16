@@ -2,6 +2,11 @@ const Park = function (name, ticketPrice) {
     this.name = name;
     this.ticketPrice = ticketPrice;
     this.dinosaurs = [];
+    this.dietInventory = {
+        'carnivore': 0,
+        'herbivore': 0,
+        'omnivore': 0,
+    };
 };
 
 
@@ -73,8 +78,32 @@ Park.prototype.removeASpeciesOfDinosaur = function(species) {
     dinosaurs = this.dinosaurs;
     result = dinosaurs.filter(dinosaur => dinosaur.species !== species);
     this.dinosaurs = result;
-}
+};
 
+
+Park.prototype.countDinosaursByDiet = function() {
+    let carnivore = 0;
+    let herbivore = 0;
+    let omnivore = 0;
+
+    // this isn't working....doesn't actually add to the above variables 
+    for (const dinosaur of this.dinosaurs) {
+        if (dinosaur.diet === 'carnivore') {
+            carnivore += 1;
+        } if (dinosaur.diet === 'herbivore') {
+            herbivore += 1;
+        } if (dinosaur.diet === 'omnivore') {
+            omnivore += 1;
+        };
+    };
+
+    this.dietInventory.carnivore = carnivore;
+    this.dietInventory.herbivore = herbivore;
+    this.dietInventory.omnivore = omnivore;
+
+    console.log(this.dietInventory);
+    return this.dietInventory
+};
 
 
 

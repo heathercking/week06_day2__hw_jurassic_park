@@ -102,5 +102,20 @@ describe('Park', function() {
     const actual = park.dinosaurs;
     assert.deepStrictEqual(actual, [dinosaur1, dinosaur2]);
   });
+
+  it('should be able to log the number of dinosaurs by diet type', function() {
+    park.addADinosaur(dinosaur1);
+    park.addADinosaur(dinosaur2);
+    park.addADinosaur(dinosaur3);
+    park.addADinosaur(dinosaur4);
+    const actual = park.dietInventory;
+    const dietInventory = {
+      'carnivore': 2,
+      'herbivore': 2,
+      'omnivore': 0,
+    };
+    assert.deepStrictEqual(actual, dietInventory)
+
+  })
     
 });
