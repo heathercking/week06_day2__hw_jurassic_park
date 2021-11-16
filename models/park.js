@@ -4,13 +4,17 @@ const Park = function (name, ticketPrice) {
     this.dinosaurs = [];
 };
 
+
+
 Park.prototype.addADinosaur = function(dinosaur) {
     this.dinosaurs.push(dinosaur);
 };
 
+
 Park.prototype.removeADinosaur = function(index) {
     this.dinosaurs.splice(index, 1);
 };
+
 
 Park.prototype.findDinosaurWithMostVisitors = function() {
     let highestGuests = 0;
@@ -23,6 +27,23 @@ Park.prototype.findDinosaurWithMostVisitors = function() {
         };
     };
     return topDinosaur;
+};
+
+
+Park.prototype.findDinosaursBySpecies = function(species) {
+    let speciesList = []
+
+    for (const dinosaur of this.dinosaurs) {
+        if (dinosaur.species === species) {
+            speciesList.push(dinosaur)
+        };
+    };
+    return speciesList;
+};
+
+
+Park.prototype.countDailyVisitors = function() {
+
 };
 
 module.exports = Park;
