@@ -92,5 +92,15 @@ describe('Park', function() {
     const actual = park.calculateAnnualRevenue();
     assert.strictEqual(actual, 1019200);
   });
+
+  it('should be able to remove all dinosaurs of a particular species', function() {
+    park.addADinosaur(dinosaur1);
+    park.addADinosaur(dinosaur2);
+    park.addADinosaur(dinosaur3);
+    park.addADinosaur(dinosaur4);
+    park.removeASpeciesOfDinosaur('triceratops');
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, [dinosaur1, dinosaur2]);
+  });
     
 });
