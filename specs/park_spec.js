@@ -81,7 +81,7 @@ describe('Park', function() {
     park.addADinosaur(dinosaur3);
     park.addADinosaur(dinosaur4);
     const actual = park.countAnnualVisitors();
-    assert.strictEqual(actual, 50,960);
+    assert.strictEqual(actual, 50960);
   });
 
   it('should be able to calculate total revenue for one year', function() {

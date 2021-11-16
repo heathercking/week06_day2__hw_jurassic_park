@@ -26,6 +26,7 @@ Park.prototype.findDinosaurWithMostVisitors = function() {
             highestGuests = dinosaur.guestsAttractedPerDay
         };
     };
+
     return topDinosaur;
 };
 
@@ -38,12 +39,25 @@ Park.prototype.findDinosaursBySpecies = function(species) {
             speciesList.push(dinosaur)
         };
     };
+
     return speciesList;
 };
 
 
 Park.prototype.countDailyVisitors = function() {
+    let dailyVisitors = 0;
 
+    for (const dinosaur of this.dinosaurs) {
+        dailyVisitors += dinosaur.guestsAttractedPerDay
+    };
+
+    return dailyVisitors;
 };
+
+
+
+
+
+
 
 module.exports = Park;
