@@ -55,6 +55,14 @@ Park.prototype.countDailyVisitors = function() {
 };
 
 
+Park.prototype.countAnnualVisitors = function() {
+    dailyVisitors = this.countDailyVisitors();
+    annualVisitors = dailyVisitors * 364; //closed on Christmas Day! And not including a leap year...
+    return annualVisitors;
+};
+
+
+
 
 
 
