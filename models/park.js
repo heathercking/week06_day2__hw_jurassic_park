@@ -20,6 +20,12 @@ Park.prototype.removeADinosaur = function(index) {
     this.dinosaurs.splice(index, 1);
 };
 
+// OR better way of doing it without hardcoding...
+// Park.prototype.remove = function (dinosaur) {
+//     const index = this.dinosaurs.indexOf(dinosaur);
+//     this.dinosaurs.splice(index, 1);
+//   }
+
 
 Park.prototype.findDinosaurWithMostVisitors = function() {
     let highestGuests = 0;
@@ -86,12 +92,13 @@ Park.prototype.countDinosaursByDiet = function() {
     let herbivore = 0;
     let omnivore = 0;
 
-    // this isn't working....doesn't actually add to the above variables 
     for (const dinosaur of this.dinosaurs) {
         if (dinosaur.diet === 'carnivore') {
             carnivore += 1;
+            console.log(carnivore)
         } if (dinosaur.diet === 'herbivore') {
             herbivore += 1;
+            console.log(herbivore)
         } if (dinosaur.diet === 'omnivore') {
             omnivore += 1;
         };

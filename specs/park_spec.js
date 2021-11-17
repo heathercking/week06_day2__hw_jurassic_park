@@ -108,6 +108,7 @@ describe('Park', function() {
     park.addADinosaur(dinosaur2);
     park.addADinosaur(dinosaur3);
     park.addADinosaur(dinosaur4);
+    park.countDinosaursByDiet();
     const actual = park.dietInventory;
     const dietInventory = {
       'carnivore': 2,
